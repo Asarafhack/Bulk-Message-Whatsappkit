@@ -1,62 +1,78 @@
-# Bulk-Message-Whatsappkit
-WhatsApp Bulk Message Sender This repository provides instructions for setting up and running a Python script to send bulk WhatsApp messages using WhatsApp Web. This setup is compatible with Windows, Linux, and macOS.
+WhatsApp Bulk Messaging Automation
+This project allows you to automate sending bulk messages on WhatsApp using Python and Selenium WebDriver. It's ideal for businesses and marketers who need to communicate with multiple contacts efficiently.
+
+Features
+Automated Messaging: Send personalized messages to multiple contacts simultaneously.
+Easy Setup: Use Selenium WebDriver for automation with a straightforward configuration.
+Customizable: Modify the message content and contact list as needed.
+Project Structure
+bulk_messages.py: Python script to automate message sending.
+contacts.csv: CSV file containing contact numbers and messages.
+chromedriver.exe: WebDriver executable for Chrome (ensure compatibility with your Chrome version).
 Prerequisites
 Python 3.x: Ensure Python is installed on your system.
-Google Chrome: Required for WhatsApp Web.
-WhatsApp Web: Must be logged in on your Chrome browser.
+Google Chrome: The web browser used for automation.
+ChromeDriver: WebDriver executable for Chrome.
 Installation Instructions
 1. Clone the Repository
-Open a terminal or command prompt and run:
+Open a terminal or command prompt and execute:
 
 bash
 Copy code
-git clone https://github.com/yourusername/whatsapp-bulk-message-sender.git
-cd whatsapp-bulk-message-sender
+git clone https://github.com/yourusername/whatsapp-bulk-messaging.git
+cd whatsapp-bulk-messaging
 2. Install Python Packages
-Ensure you have pip installed. Install the required Python packages by running:
+Install the required Python package (selenium) using pip:
 
 bash
 Copy code
-pip install pywhatkit pandas
-3. Prepare Your CSV File
-Create a CSV file named contacts_and_messages.csv in the repository directory. The CSV should be formatted as follows:
+pip install selenium
+3. Download and Set Up ChromeDriver
+Download ChromeDriver: Obtain the ChromeDriver executable that matches your version of Google Chrome.
+
+Place ChromeDriver: Put the chromedriver.exe file in the project directory or specify its path in the script.
+
+4. Prepare the Contacts File
+Create a contacts.csv file in the project directory with the following format:
 
 csv
 Copy code
-PhoneNumber,Message
-9994371082,Hello! This is a test message.
-6369193629,Hi there! How are you doing?
-4. Configure WhatsApp Web
-Open WhatsApp Web in Google Chrome.
-Log in by scanning the QR code with your mobile WhatsApp.
-Ensure your contacts and chat list are visible in WhatsApp Web.
+phone_number,message
+9994371082,Hello from Python!
+6369193629,This is a test message.
+Configuration
+Update Script: Open bulk_messages.py and ensure the path to chromedriver.exe is correctly set in the script.
 Running the Script
-Save the Python Script
+1. Start WhatsApp Web
+Open WhatsApp Web in Google Chrome and log in by scanning the QR code.
 
-Save the provided Python script as whatsapp_bulk_sender.py in your repository directory.
-
-Execute the Script
-
-Run the script using Python. In your terminal or command prompt, execute:
+2. Execute the Python Script
+Run the script with:
 
 bash
 Copy code
-python whatsapp_bulk_sender.py
-Monitor the Execution
+python bulk_messages.py
+3. Monitor Execution
+The script will start sending messages to the contacts listed in contacts.csv. Ensure you do not close the browser or interrupt the script during execution.
 
-The script will send messages as specified in your CSV file. Ensure WhatsApp Web remains open during execution to allow messages to be sent successfully.
-
-Output
-Console Output: The script will print messages to the console indicating which contact the message is being sent to.
-WhatsApp Web: Messages will be sent to the contacts listed in your CSV file. Monitor WhatsApp Web to verify that messages are delivered.
+Expected Output
+Console Output: The script will output the progress of sending messages to each contact.
+plaintext
+Copy code
+Sending message to +919994371082...
+Message sent to +919994371082
+Sending message to +916369193629...
+Message sent to +916369193629
+WhatsApp Web: Messages will appear in the chat windows of the specified contacts.
 Troubleshooting
-Message Sending Issues: Ensure WhatsApp Web is open and logged in. Adjust the time.sleep() duration in the script if messages are not sent correctly.
-Driver Errors: If encountering issues related to the browser driver, ensure Google Chrome is installed and up to date.
+ChromeDriver Issues: Ensure ChromeDriver is compatible with your Chrome version and correctly placed.
+Selenium Errors: Verify that all required Python packages are installed and up to date.
 Notes
-WhatsApp Policies: Use the script responsibly. Excessive messaging may lead to temporary or permanent bans.
-Security: Be cautious with automation tools. Ensure they are from trusted sources.
+WhatsApp Policies: Be aware of WhatsApp’s policies regarding automated messaging to avoid potential account suspension.
+Performance: The script's performance may vary based on network speed and WhatsApp Web’s responsiveness.
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Contributing
 Contributions are welcome! Please open issues or submit pull requests for improvements or bug fixes.
+
